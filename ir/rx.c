@@ -132,6 +132,10 @@ void ir_rx_set_excess(int16_t excess) {
     ir_rx_context.excess = excess;
 }
 
+void ir_rx_set_timeout(int16_t timeout) {
+    ir_rx_context.timeout = timeout;
+}
+
 int ir_recv(ir_decoder_t *decoder, uint32_t timeout, void *receive_buffer, uint16_t receive_buffer_size) {
     uint32_t start_time = sdk_system_get_time();
     while (!timeout || (sdk_system_get_time() - start_time) * portTICK_PERIOD_MS < timeout) {

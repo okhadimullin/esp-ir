@@ -51,6 +51,9 @@ void ir_rx_init(uint8_t gpio, uint16_t buffer_size);
 // mark pulse lengths and added to space lengths.
 void ir_rx_set_excess(int16_t excess);
 
+// Set the timeout for receiving repeating codes
+void ir_rx_set_timeout(int16_t timeout);
+
 // Start listening for IR transmission until either transmission is matched by
 // given decoder (it's decode() function returns positive value) or timeout
 // milliseconds has passed.
